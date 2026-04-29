@@ -4,6 +4,7 @@ const db = require('../config/db');
 const pdfService = require('../services/pdfService');
 const convService = require('../services/conversionService');
 const TOOLS = require('../services/toolRegistry');
+const emailService = require('../services/emailService');
 
 // Rate limiter: 20 tasks/day for free users
 async function checkRateLimit(userId) {
@@ -154,6 +155,23 @@ exports.processTool = async (req, res) => {
         [userId, slug, path.basename(inputPath || files[0].originalname), filename, 'done']
       );
       await db.query('UPDATE users SET tasks_today = tasks_today + 1 WHERE id = ?', [userId]);
+
+      // Send task completion email (async, don't block response)
+      try {
+        const [users] = await db.query(
+          'SELECT name, email FROM users WHERE id = ?',
+          [userId]
+        );
+
+        if (users.length > 0) {
+          const user = users[0];
+          emailService.sendTaskCompletionEmail(user.email, user.name, tool.name, filename).catch(err => {
+            console.error('Failed to send task completion email:', err);
+          });
+        }
+      } catch (emailError) {
+        console.error('Error fetching user for email notification:', emailError);
+      }
     }
 
     res.json({

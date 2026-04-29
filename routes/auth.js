@@ -12,4 +12,10 @@ router.post('/login', authController.login);
 // Get current user (requires authentication)
 router.get('/me', authMiddleware(true), authController.me);
 
+// Request password reset
+router.post('/request-password-reset', authController.requestPasswordReset);
+
+// Reset password with token
+router.post('/reset-password', authController.resetPassword);
+
 module.exports = router;

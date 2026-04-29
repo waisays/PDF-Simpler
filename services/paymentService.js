@@ -1,5 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const db = require('../config/db');
+const emailService = require('../services/emailService');
 
 // Create Stripe checkout session for Pro plan upgrade
 async function createCheckoutSession(userId, userEmail) {
@@ -68,6 +69,20 @@ async function handleCheckoutCompleted(session) {
       ['pro', userId]
     );
 
+    // Get user details for email
+    const [users] = await db.query(
+      'SELECT name, email FROM users WHERE id = ?',
+      [userId]
+    );
+
+    if (users.length > 0) {
+      const user = users[0];
+      // Send subscription upgrade email
+      emailService.sendSubscriptionEmail(user.email, user.name, 'pro').catch(err => {
+        console.error('Failed to send subscription email:', err);
+      });
+    }
+
     console.log(`User ${userId} upgraded to Pro plan`);
   } catch (error) {
     console.error('Error handling checkout completed:', error);
@@ -88,11 +103,25 @@ async function handleSubscriptionCancelled(subscription) {
     if (users.length > 0) {
       const userId = users[0].id;
 
+      // Get user details for email
+      const [userDetails] = await db.query(
+        'SELECT name, email FROM users WHERE id = ?',
+        [userId]
+      );
+
       // Downgrade user to Free plan
       await db.query(
         'UPDATE users SET plan = ?, stripe_customer_id = NULL WHERE id = ?',
         ['free', userId]
       );
+
+      // Send subscription cancellation email
+      if (userDetails.length > 0) {
+        const user = userDetails[0];
+        emailService.sendSubscriptionEmail(user.email, user.name, 'free').catch(err => {
+          console.error('Failed to send subscription cancellation email:', err);
+        });
+      }
 
       console.log(`User ${userId} downgraded to Free plan`);
     }
