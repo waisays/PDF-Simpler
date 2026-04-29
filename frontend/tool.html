@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tool-title">Tool - PDF Simpler</title>
+    <meta name="description" content="Use PDF Simpler tools">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body data-tool-slug="" id="tool-body">
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                    <path d="M8 8H24V24H8V8Z" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 12H20M12 16H20M12 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                PDF Simpler
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/dashboard.html">Dashboard</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <a href="/login.html" class="btn btn-outline" id="login-btn">Login</a>
+                <a href="/dashboard.html" class="btn btn-primary" id="dashboard-btn" style="display: none;">Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tool Section -->
+    <section class="hero" style="min-height: calc(100vh - 200px);">
+        <h1 id="tool-heading">Tool Name</h1>
+        <p id="tool-description" style="margin-bottom: 2rem; opacity: 0.9;">Tool description goes here</p>
+
+        <div class="upload-zone" id="drop-zone">
+            <div class="upload-zone-icon">📁</div>
+            <div class="upload-zone-text">Drop your file here or click to upload</div>
+            <div class="upload-zone-subtext" id="upload-subtext">Up to 100MB</div>
+            <input type="file" id="file-input" hidden>
+        </div>
+
+        <!-- Tool-specific options -->
+        <div id="tool-options" style="max-width: 600px; margin: 2rem auto; display: none;">
+            <!-- Options will be populated by JavaScript based on tool type -->
+        </div>
+
+        <div class="status-area" id="status-area"></div>
+        <button id="download-btn" class="btn btn-primary" style="display: none; margin-top: 1rem;">Download File</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PDF Simpler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/upload.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

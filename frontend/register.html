@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - PDF Simpler</title>
+    <meta name="description" content="Create your PDF Simpler account">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                    <path d="M8 8H24V24H8V8Z" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 12H20M12 16H20M12 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                PDF Simpler
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/login.html">Login</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Register Section -->
+    <section class="hero" style="min-height: calc(100vh - 200px);">
+        <div class="form-container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--brand-dark);">Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <div class="form-error" id="name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    <div class="form-error" id="email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••" minlength="6">
+                    <div class="form-error" id="password-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="••••••••" minlength="6">
+                    <div class="form-error" id="confirm-password-error"></div>
+                </div>
+                <div class="form-error" id="form-error" style="text-align: center; margin-bottom: 1rem;"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--brand-gray);">
+                Already have an account? <a href="/login.html" style="color: var(--brand-primary);">Login</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PDF Simpler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

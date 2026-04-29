@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PDF Simpler</title>
+    <meta name="description" content="Your PDF Simpler dashboard">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                    <path d="M8 8H24V24H8V8Z" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 12H20M12 16H20M12 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                PDF Simpler
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/dashboard.html" class="active">Dashboard</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="btn btn-outline" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="user-info">
+                <div class="user-avatar" id="user-avatar">U</div>
+                <div>
+                    <h2 id="user-name">Loading...</h2>
+                    <p id="user-email" style="color: var(--brand-gray);">Loading...</p>
+                </div>
+            </div>
+            <div>
+                <span class="plan-badge plan-free" id="plan-badge">Free</span>
+            </div>
+        </div>
+
+        <div class="task-stats">
+            <div class="stat-card">
+                <h3>Tasks Today</h3>
+                <div class="value" id="tasks-today">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Remaining</h3>
+                <div class="value" id="remaining-tasks">20</div>
+            </div>
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <div class="value" id="total-tasks">0</div>
+            </div>
+        </div>
+
+        <div class="task-history">
+            <h2>Recent Tasks</h2>
+            <div id="tasks-container">
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Input File</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-table-body">
+                        <!-- Tasks will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="no-tasks" style="padding: 2rem; text-align: center; color: var(--brand-gray); display: none;">
+                No tasks yet. <a href="/" style="color: var(--brand-primary);">Start using our tools!</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="/" class="btn btn-primary">Use PDF Tools</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PDF Simpler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Simpler - Your Complete PDF & File Toolkit</title>
+    <meta name="description" content="Edit, convert, merge, sign, compress PDFs with 30+ free tools. No software needed.">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                    <path d="M8 8H24V24H8V8Z" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 12H20M12 16H20M12 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                PDF Simpler
+            </a>
+            <nav class="nav-links">
+                <a href="#tools">Tools</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <a href="/login.html" class="btn btn-outline">Log In</a>
+                <a href="/register.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#tools">Tools</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="/login.html">Log In</a>
+            <a href="/register.html">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Complete PDF & File Toolkit</h1>
+        <p>Edit, convert, merge, sign, compress — 30+ tools, no software needed.</p>
+        <div class="upload-zone" id="drop-zone">
+            <div class="upload-zone-icon">📁</div>
+            <div class="upload-zone-text">Drop your PDF here or click to upload</div>
+            <div class="upload-zone-subtext">Up to 100MB · PDF, Word, Excel, JPG, PNG and more</div>
+            <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp,.html,.txt" hidden>
+        </div>
+        <div class="status-area" id="status-area"></div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">27M+</div>
+            <div class="stat-label">Files Processed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">30+</div>
+            <div class="stat-label">PDF Tools</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">180+</div>
+            <div class="stat-label">Countries</div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
+        <h2 class="section-title">Powerful PDF Tools</h2>
+        <div class="tabs">
+            <button class="tab active" data-category="all">All</button>
+            <button class="tab" data-category="edit">Edit & Sign</button>
+            <button class="tab" data-category="convert_from">Convert from PDF</button>
+            <button class="tab" data-category="convert_to">Convert to PDF</button>
+            <button class="tab" data-category="image">Images</button>
+        </div>
+        <div class="tool-grid" id="tool-grid">
+            <!-- Tool cards will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <h2 class="section-title">Why Choose PDF Simpler?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Fast & Secure</h3>
+                <p class="feature-description">Your files are processed securely and deleted automatically after 2 hours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">Works Everywhere</h3>
+                <p class="feature-description">Use on any device - desktop, tablet, or mobile. No software installation needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Free to Start</h3>
+                <p class="feature-description">Get 20 free tasks daily. No credit card required for basic features.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">All-in-One</h3>
+                <p class="feature-description">30+ tools in one place. Edit, convert, merge, and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3 class="feature-title">No Software Needed</h3>
+                <p class="feature-description">Everything runs in your browser. No downloads or installations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">GDPR Compliant</h3>
+                <p class="feature-description">Your data is protected with enterprise-grade security.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="tools-section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📤</div>
+                <h3 class="feature-title">1. Upload</h3>
+                <p class="feature-description">Drag and drop your file or click to select.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">2. Process</h3>
+                <p class="feature-description">Our tools process your file instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📥</div>
+                <h3 class="feature-title">3. Download</h3>
+                <p class="feature-description">Get your processed file immediately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <h2 class="section-title">Simple Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="pricing-title">Free</h3>
+                <div class="pricing-price">$0<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>20 tasks per day</li>
+                    <li>Basic PDF tools</li>
+                    <li>Standard processing</li>
+                    <li>No credit card required</li>
+                </ul>
+                <a href="/register.html" class="btn btn-secondary">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3 class="pricing-title">Pro</h3>
+                <div class="pricing-price">$4.99<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>Unlimited tasks</li>
+                    <li>All 30+ tools</li>
+                    <li>Priority processing</li>
+                    <li>Task history & downloads</li>
+                    <li>7-day free trial</li>
+                </ul>
+                <a href="/register.html" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Is PDF Simpler free to use?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">Yes! PDF Simpler offers a free tier with 20 tasks per day. No credit card required. For unlimited tasks and advanced features, upgrade to Pro for just $4.99/month.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is my data secure?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">Absolutely. All files are processed securely and automatically deleted within 2 hours. We use industry-standard encryption and are GDPR compliant.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What file types are supported?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">We support PDF, Word (DOC, DOCX), Excel (XLS, XLSX), PowerPoint (PPT, PPTX), images (JPG, PNG, GIF, WebP), HTML, and text files.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to install software?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">No installation required! PDF Simpler works entirely in your web browser. Just upload your file and process it instantly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's the file size limit?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">You can upload files up to 100MB. For larger files, consider our Pro plan which offers increased limits.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I cancel my subscription?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">Yes, you can cancel your Pro subscription at any time. You'll continue to have access until the end of your billing period.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>PDF Tools</h3>
+                <ul>
+                    <li><a href="/tool/merge-pdf">Merge PDF</a></li>
+                    <li><a href="/tool/split-pdf">Split PDF</a></li>
+                    <li><a href="/tool/compress-pdf">Compress PDF</a></li>
+                    <li><a href="/tool/rotate-pdf">Rotate PDF</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Convert</h3>
+                <ul>
+                    <li><a href="/tool/pdf-to-word">PDF to Word</a></li>
+                    <li><a href="/tool/pdf-to-jpg">PDF to JPG</a></li>
+                    <li><a href="/tool/word-to-pdf">Word to PDF</a></li>
+                    <li><a href="/tool/jpg-to-pdf">JPG to PDF</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                    <li><a href="#gdpr">GDPR</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PDF Simpler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/upload.js"></script>
+</body>
+</html>
