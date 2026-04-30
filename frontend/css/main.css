@@ -748,3 +748,68 @@ footer {
 .theme-toggle:hover {
   background: var(--brand-light-gray);
 }
+
+/* Generic Section Styles */
+.section {
+  padding: 4rem 2rem;
+  background: var(--brand-white);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: var(--brand-dark);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  color: var(--brand-dark);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.section p {
+  color: var(--brand-gray);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* Contact Info */
+.contact-info {
+  background: var(--brand-light-gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  color: var(--brand-dark);
+}
+
+.contact-info strong {
+  color: var(--brand-primary);
+}
+
+/* Legal Sections */
+#privacy, #terms {
+  background: var(--brand-light-gray);
+}
+
+#privacy h3, #terms h3 {
+  color: var(--brand-primary);
+}
+
+#privacy em, #terms em {
+  display: block;
+  margin-top: 2rem;
+  color: var(--brand-gray);
+  font-style: italic;
+}

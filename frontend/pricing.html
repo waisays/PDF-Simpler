@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - PDF Simpler</title>
+    <meta name="description" content="Choose the perfect plan for your PDF needs. Free and Pro plans available.">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        .pricing-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-header h1 {
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header p {
+            color: var(--brand-gray);
+            font-size: 1.1rem;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.pro {
+            border: 2px solid var(--brand-primary);
+        }
+
+        .pricing-card.pro::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--brand-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--brand-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--brand-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--brand-gray);
+            font-weight: normal;
+        }
+
+        .plan-description {
+            color: var(--brand-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: var(--brand-dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .plan-features li.disabled {
+            color: var(--brand-gray);
+            text-decoration: line-through;
+        }
+
+        .plan-features li.disabled::before {
+            content: '✗';
+            color: #ef4444;
+        }
+
+        .plan-button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .plan-button.primary {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        .plan-button.primary:hover {
+            background: #1d4ed8;
+        }
+
+        .plan-button.secondary {
+            background: var(--brand-light);
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary);
+        }
+
+        .plan-button.secondary:hover {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--brand-dark);
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--brand-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--brand-gray);
+            line-height: 1.6;
+        }
+
+        .guarantee {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--brand-light);
+            border-radius: 12px;
+        }
+
+        .guarantee h3 {
+            color: var(--brand-dark);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee p {
+            color: var(--brand-gray);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                    <path d="M8 8H24V24H8V8Z" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 12H20M12 16H20M12 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                PDF Simpler
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#features">Features</a>
+                <a href="/pricing.html" class="active">Pricing</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <a href="/login.html" class="btn btn-outline">Log In</a>
+                <a href="/register.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-header">
+            <h1>Choose Your Perfect Plan</h1>
+            <p>Start free, upgrade when you need more power</p>
+        </div>
+
+        <div class="pricing-cards">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <div class="plan-name">Free</div>
+                <div class="plan-price">$0<span>/month</span></div>
+                <div class="plan-description">Perfect for occasional PDF tasks</div>
+                <ul class="plan-features">
+                    <li>20 tasks per day</li>
+                    <li>All basic PDF tools</li>
+                    <li>File conversions</li>
+                    <li>Image processing</li>
+                    <li>Standard processing speed</li>
+                    <li>Basic support</li>
+                    <li class="disabled">Unlimited tasks</li>
+                    <li class="disabled">Priority processing</li>
+                    <li class="disabled">Advanced analytics</li>
+                    <li class="disabled">API access</li>
+                </ul>
+                <button class="plan-button secondary" onclick="window.location.href='/register.html'">Get Started Free</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card pro">
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">$4.99<span>/month</span></div>
+                <div class="plan-description">For power users and professionals</div>
+                <ul class="plan-features">
+                    <li>Unlimited tasks</li>
+                    <li>All PDF tools included</li>
+                    <li>Priority processing speed</li>
+                    <li>Advanced file conversions</li>
+                    <li>Batch processing</li>
+                    <li>Detailed analytics dashboard</li>
+                    <li>Priority email support</li>
+                    <li>No watermarks</li>
+                    <li>Higher file size limits</li>
+                    <li>Early access to new features</li>
+                </ul>
+                <button class="plan-button primary" id="upgrade-btn">Upgrade to Pro</button>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between Free and Pro plans?</div>
+                <div class="faq-answer">
+                    The Free plan includes 20 tasks per day with all basic PDF tools. The Pro plan removes all limits with unlimited tasks, priority processing, advanced analytics, and additional features like batch processing and higher file size limits.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I cancel my Pro subscription anytime?</div>
+                <div class="faq-answer">
+                    Yes! You can cancel your Pro subscription at any time. You'll continue to have access to Pro features until the end of your current billing period.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">
+                    We accept all major credit cards including Visa, MasterCard, American Express, and Discover through our secure Stripe payment system.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is my payment information secure?</div>
+                <div class="faq-answer">
+                    Absolutely! We use Stripe for payment processing, which is PCI DSS compliant and uses industry-standard encryption to protect your payment information.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What happens if I exceed my daily limit on the Free plan?</div>
+                <div class="faq-answer">
+                    If you reach your 20-task daily limit on the Free plan, you'll need to wait until the next day or upgrade to Pro for unlimited tasks. The limit resets automatically at midnight.
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <h3>💎 30-Day Money-Back Guarantee</h3>
+            <p>Try PDF Simpler Pro risk-free! If you're not completely satisfied within 30 days, we'll refund your payment in full. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PDF Simpler</h3>
+                <p>Your complete PDF and file toolkit</p>
+            </div>
+            <div class="footer-section">
+                <h3>Product</h3>
+                <a href="/#tools">Tools</a>
+                <a href="/#features">Features</a>
+                <a href="/pricing.html">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+                <a href="/#privacy">Privacy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PDF Simpler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        const upgradeBtn = document.getElementById('upgrade-btn');
+
+        if (token) {
+            // User is logged in, handle upgrade
+            upgradeBtn.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('/api/user/upgrade', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Upgrade failed');
+                    }
+
+                    // Redirect to Stripe checkout
+                    if (data.checkoutUrl) {
+                        window.location.href = data.checkoutUrl;
+                    }
+                } catch (error) {
+                    alert(error.message || 'Failed to initiate upgrade. Please try again.');
+                }
+            });
+        } else {
+            // User is not logged in, redirect to register
+            upgradeBtn.addEventListener('click', () => {
+                window.location.href = '/register.html';
+            });
+        }
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -64,7 +64,7 @@ exports.upgrade = async (req, res) => {
     }
 
     // Check if Stripe is configured
-    if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY.includes('sk_live_...')) {
+    if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY.includes('dummy') || process.env.STRIPE_SECRET_KEY.includes('sk_test_dummy')) {
       return res.status(501).json({
         error: 'Payment integration not configured',
         message: 'Stripe integration is not set up. Please contact support.'
